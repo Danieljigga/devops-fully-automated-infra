@@ -5,10 +5,10 @@ Testing teh webhook.....
 
 ## CICD Infra setup
 1) ###### GitHub setup
-    Fork GitHub Repository by using the existing repo "devops-fully-automated-infra" (https://github.com/cvamsikrishna11/devops-fully-automated-infra)     
+    Fork GitHub Repository by using the existing repo "devops-fully-automated-infra" (https://github.com/danieljigga/devops-fully-automated-infra)     
     - Go to GitHub (github.com)
     - Login to your GitHub Account
-    - **Fork repository "devops-fully-automated-infra" (https://github.com/cvamsikrishna11/devops-fully-automated-infra.git) & name it "devops-fully-automated-infra"**
+    - **Fork repository "devops-fully-automated-infra" (https://github.com/danieljigga/devops-fully-automated-infra.git) & name it "devops-fully-automated-infra"**
     - Clone your newly created repo to your local
 
 2) ###### Jenkins
@@ -17,7 +17,7 @@ Testing teh webhook.....
     - Security Group (Open): 8080, 9100 and 22 to 0.0.0.0/0
     - Key pair: Select or create a new keypair
     - **Attach Jenkins server with IAM role having "AdministratorAccess"**
-    - User data (Copy the following user data): https://github.com/cvamsikrishna11/devops-fully-automated/blob/installations/jenkins-maven-ansible-setup.sh
+    - User data (Copy the following user data): https://github.com/danieljigga/devops-fully-automated/blob/installations/jenkins-maven-ansible-setup.sh
     - Launch Instance
     - After launching this Jenkins server, attach a tag as **Key=Application, value=jenkins**
 
