@@ -1,13 +1,3 @@
-variable "name" {
-  type        = string
-  description = "name tag value"
-}
-
-variable "tags" {
-  type        = map(any)
-  description = "tags for the vpc module"
-}
-
 resource "aws_iam_role" "iam_role" {
   name = join("", [var.name, "-", "iam-role"])
 
