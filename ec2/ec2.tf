@@ -17,7 +17,7 @@ resource "aws_instance" "web_server" {
 }
 
 resource "aws_iam_instance_profile" "instance_profile" {
-  name = join("", [var.name, "-", "iam-instance-profile"])
+  name = join("", [var.name, "-", "iam-instance-profiles"])
   role = var.iam_role_name
 }
 
