@@ -18,3 +18,11 @@ variable "key_pair_name" {
   description = "keypair to utilize"
 
 }
+
+variable "instance_type" {
+  type = list(string)
+  description = "instance type values"
+  default = [ "t3.small", "t3.large", "t2.large" ]
+  
+}
+
