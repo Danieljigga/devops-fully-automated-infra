@@ -32,60 +32,60 @@ pipeline {
         }
         
         
-        stage('Terraform validate') {
-            steps {
-                echo 'Code syntax checking...'
-                sh 'sudo terraform validate'
+        // stage('Terraform validate') {
+        //     steps {
+        //         echo 'Code syntax checking...'
+        //         sh 'sudo terraform validate'
                
-            }
-        }
+        //     }
+        // }
         
         
-        stage('Terraform plan') {
-            steps {
-                echo 'Terraform plan for the dry run...'
-                sh 'sudo terraform plan'
+        // stage('Terraform plan') {
+        //     steps {
+        //         echo 'Terraform plan for the dry run...'
+        //         sh 'sudo terraform plan'
                
-            }
-        } 
+        //     }
+        // } 
                 
         
-        stage('Checkov scan') {
-            steps {
+        // stage('Checkov scan') {
+        //     steps {
                 
-                sh """                
-                sudo pip3 install --upgrade pip
-                sudo pip3 install checkov
-                checkov -d . --skip-check CKV_AWS*
-                """
+        //         sh """                
+        //         sudo pip3 install --upgrade pip
+        //         sudo pip3 install checkov
+        //         checkov -d . --skip-check CKV_AWS*
+        //         """
                
-            }
-        }               
+        //     }
+        // }               
         
-        stage('Manual approval') {
-            steps {
+        // stage('Manual approval') {
+        //     steps {
                 
-                input 'Approval required for deployment'
+        //         input 'Approval required for deployment'
                
-            }
-        }
+        //     }
+        // }
         
         
-         stage('Terraform apply') {
-            steps {
-                echo 'Terraform apply...'                           
-                sh 'sudo terraform apply --auto-approve'
+        //  stage('Terraform apply') {
+        //     steps {
+        //         echo 'Terraform apply...'                           
+        //         sh 'sudo terraform apply --auto-approve'
                
-            }
-        }
+        //     }
+        // }
         
-        //  stage('Terraform destroy') {
-        //      steps {
-        //         echo 'Terraform destroy...'                             
-        //          sh 'sudo terraform destroy --auto-approve'
+         stage('Terraform destroy') {
+             steps {
+                echo 'Terraform destroy...'                             
+                 sh 'sudo terraform destroy --auto-approve'
                
-        //      }
-        //  }
+             }
+         }
         
     }
     
