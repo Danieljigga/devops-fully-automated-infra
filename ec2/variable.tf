@@ -25,4 +25,10 @@ variable "instance_type" {
   default = [ "t3.small", "t3.large", "t2.large" ]
   
 }
+variable "ami" {
+  type = string
+  description = "ami value"
+  default = "ami-0b0dcb5067f052a63"
+  
+}
 

@@ -1,5 +1,5 @@
 resource "aws_instance" "web_server" {
-  ami                    = "ami-0b0dcb5067f052a63"
+  ami                    = var.ami
   instance_type          = var.instance_type[0]
   key_name               = var.key_pair_name
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
